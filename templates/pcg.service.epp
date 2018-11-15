@@ -1,0 +1,19 @@
+[Unit]
+Description=PSGI for PCG
+After=network.target
+
+[Service]
+Environment=PERL5LIB=<%= $perl_path %>/lib/perl5:<%= $perl_path %>/lib/perl5/x86_64-linux-thread-multi:<%= $perl_path %>/lib64/perl5:<%= $perl_path %>/share/perl5
+<% if !empty($proxy_host) { -%>
+Environment=http_proxy=<%= $proxy_proto %>://<% if $proxy_user { %><%= $proxy_user %>:<%= $proxy_pass %>@<% } %><%= $proxy_host %><% if $proxy_port { %>:<%= $proxy_port %><% } %>
+Environment=https_proxy=<%= $proxy_proto %>://<% if $proxy_user { %><%= $proxy_user %>:<%= $proxy_pass %>@<% } %><%= $proxy_host %><% if $proxy_port { %>:<%= $proxy_port %><% } %>
+<% } -%>
+UMask=027
+User=<%= $user %>
+Group=<%= $group %>
+WorkingDirectory=<%= $path %>
+ExecStart=<%= $perl_path %>/bin/plackup -s Starman -a <%= $path %>/bin/app.pl -I <%= $path %>/lib -E production -l :<%= $port %> --workers=2
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target

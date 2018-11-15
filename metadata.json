@@ -1,0 +1,54 @@
+{
+  "name": "qtechnologies-osbaseline",
+  "version": "0.8.0",
+  "author": "qtechnologies",
+  "summary": "Manage OS patch baselines with Puppet",
+  "license": "Apache-2.0",
+  "source": "https://github.com/Q-Technologies/puppet-osbaseline.git",
+  "project_page": "https://github.com/Q-Technologies/puppet-osbaseline",
+  "issues_url": "https://github.com/Q-Technologies/puppet-osbaseline/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 4.16.0"},
+    {"name":"darin-zypprepo","version_requirement":">= 1.0.2"}
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem":"RedHat",
+      "operatingsystemrelease": [
+        "6.0",
+        "7.0"
+      ]
+    },
+    {
+      "operatingsystem":"Centos",
+      "operatingsystemrelease": [
+        "6.0",
+        "7.0"
+      ]
+    },
+    {
+      "operatingsystem":"OEL",
+      "operatingsystemrelease": [
+        "6.0",
+        "7.0"
+      ]
+    },
+    {
+      "operatingsystem":"SLES",
+      "operatingsystemrelease": [
+        "11.0",
+        "12.0"
+      ]
+    },
+    {
+      "operatingsystem":"AIX",
+      "operatingsystemrelease": [
+        "6.1",
+        "7.1",
+        "7.2"
+      ]
+    }
+  ],
+  "data_provider": "hiera"
+}
+

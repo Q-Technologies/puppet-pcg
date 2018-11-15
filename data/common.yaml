@@ -1,0 +1,18 @@
+---
+pcg::path: /opt/pcg
+pcg::perl_path: /usr
+pcg::install_pkg: true
+pcg::install_systemd_service: true
+pcg::port: 3011
+pcg::owner: 'pcg'
+pcg::group: 'pcg'
+pcg::proxy_user: ''
+pcg::proxy_pass: ''
+pcg::proxy_proto: 'http'
+pcg::proxy_host: ''
+pcg::proxy_port: ''
+pcg::config: {}
+pcg::roles: []
+pcg::stacks: []
+pcg::template: ''
+
